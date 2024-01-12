@@ -5,8 +5,8 @@ import SearchResults from "./components/search-results";
 import { searchApi } from "./api/actions";
 
 function App() {
-  const [results, setResults] = useState([""]);
   const [word, setWord] = useState("");
+  const [results, setResults] = useState([""]);
 
   const fetchSynonyms = async (word: string) => {
     const data = await searchApi(word);
