@@ -13,10 +13,10 @@ export const searchApi = async (
   try {
     const query = `https://api.datamuse.com/words?rel_syn=${word}`;
     const res = await fetch(query);
-    const result = await res.json();
-    return result as apiReturn[];
+    const result = <apiReturn[]>await res.json();
+    return result;
   } catch (error) {
     console.error(error);
-    return { error: error, message: "Error searching..." } as apiError;
+    return <apiError>{ error: error, message: "Error searching..." };
   }
 };
